@@ -10,7 +10,7 @@ import {
 describe('resolveValue', () => {
   test('should resolve provided value', async () => {
     const value = 10;
-    return expect(resolveValue(value)).resolves.toBe(value);
+    await expect(resolveValue(value)).resolves.toBe(value);
   });
 });
 
@@ -33,6 +33,6 @@ describe('throwCustomError', () => {
 
 describe('rejectCustomError', () => {
   test('should reject custom error', async () => {
-    return expect(rejectCustomError()).rejects.toThrowError(MyAwesomeError);
+    await expect(rejectCustomError()).rejects.toThrowError(MyAwesomeError);
   });
 });
