@@ -12,10 +12,14 @@ const testCases = [
   { a: 3, b: 2, action: Action.Exponentiate, expected: 9 },
   { a: 3, b: 2, action: '%', expected: null },
   { a: 'dog', b: 2, action: Action.Add, expected: null },
+  { a: 3, b: 'cat', action: Action.Add, expected: null },
 ];
 
 describe('simpleCalculator', () => {
-  it.each(testCases)('simpleCalculator tests', ({ a, b, action, expected }) => {
-    expect(simpleCalculator({ a, b, action })).toBe(expected);
-  });
+  test.each(testCases)(
+    'simpleCalculator tests',
+    ({ a, b, action, expected }) => {
+      expect(simpleCalculator({ a, b, action })).toBe(expected);
+    },
+  );
 });

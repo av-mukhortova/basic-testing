@@ -25,12 +25,15 @@ describe('simpleCalculator tests', () => {
   });
 
   test('should return null for invalid action', () => {
-    expect(simpleCalculator({ a: 2, b: 3, action: '%' })).toBe(null);
+    expect(simpleCalculator({ a: 2, b: 3, action: '%' })).toBeNull();
   });
 
   test('should return null for invalid arguments', () => {
-    expect(simpleCalculator({ a: 3, b: 'dog', action: Action.Multiply })).toBe(
-      null,
-    );
+    expect(
+      simpleCalculator({ a: 3, b: 'dog', action: Action.Multiply }),
+    ).toBeNull();
+    expect(
+      simpleCalculator({ a: 'cat', b: 5, action: Action.Multiply }),
+    ).toBeNull();
   });
 });
